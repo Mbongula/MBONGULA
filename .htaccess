@@ -1,0 +1,28 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+
+RewriteCond %{HTTP_HOST} ^(?:www\.)?konexiontech\.com(?:.*)$ [nc]
+
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [redirect=301,L]
+
+# Redirect non-www to www
+
+
+
+RewriteCond %{HTTP_HOST} ^konexiontech\.com [NC]
+
+RewriteRule ^(.*)$ https://www.konexiontech.com/$1 [L,R=301]
+
+
+
+RewriteRule ^accueil$ index.php [L]
+RewriteRule ^présentation$ aboutus.php [L]
+RewriteRule ^devis$ devis.php [L]
+RewriteRule ^siteweb_appmobile$ siteapp.php [L]
+RewriteRule ^marketing_digital$ contactservice.php [L]
+RewriteRule ^contact$ contact.php [L]
+RewriteRule ^infographie$ infographie.php [L]
+RewriteRule ^impression$ impression.php [L] nn
+
+
